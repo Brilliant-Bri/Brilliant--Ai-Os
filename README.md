@@ -10,3 +10,8 @@ const BrilliantMemory = {
    return JSON.parse(localStorage.getItem(key));
  }
 }
+index.html
+Название выпуска
+Intex.html
+/js memory-core.js
+BrilliantAi7.html

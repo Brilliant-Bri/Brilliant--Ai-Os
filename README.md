@@ -446,7 +446,7 @@ Glassmorphism.
 Dark theme.
 
 Everything should work without breaking the existing design.
-  document.querySelectorAll('.card').forEach(card => {
+  document.querySelectorAll('.card').forEach( card => {
     card.addEventListener('click', (e) => {
 cardId = e.currentTarget.id;
       console.log('Card clicked:', cardId);

@@ -128,3 +128,111 @@ window.location.href="dashboard.html";
 </body>
 </html>
 dashboard.html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Brilliant AI Dashboard</title>
+
+<style>
+
+body {
+    margin:0;
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top,#123b66,#050814);
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+header {
+    padding:30px;
+    text-align:center;
+}
+
+h1 {
+    color:#65d8ff;
+    text-shadow:0 0 25px #008cff;
+    letter-spacing:5px;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.card {
+    background:rgba(20,40,80,.4);
+    border:1px solid rgba(80,200,255,.4);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,150,255,.2);
+}
+
+.card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 0 40px #008cff;
+}
+
+.icon {
+    font-size:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>
+BRILLIANT AI OS
+</h1>
+
+<p>
+Command Center
+</p>
+
+</header>
+
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🎬</div>
+<h2>Studio</h2>
+<p>Создание эпизодов</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🤖</div>
+<h2>Characters</h2>
+<p>Brilliant AI / Mira</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🎨</div>
+<h2>Media</h2>
+<p>Видео и изображения</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🧠</div>
+<h2>AI Core</h2>
+<p>Память системы</p>
+</div>
+
+
+</div>
+
+</body>
+</html>

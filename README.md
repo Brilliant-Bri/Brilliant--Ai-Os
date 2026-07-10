@@ -1,4 +1,72 @@
-# Brilliant--Ai-Os
+BRILLIANT AI CORE
+│
+├── 🌌 Knowledge Core
+│     ├── Earth
+│     ├── Ocean
+│     ├── Forest
+│     ├── Humanity
+│     ├── Music
+│     ├── Space
+│
+├── 🎬 Story Studio
+│     ├── Episodes
+│     ├── Seasons
+│     ├── Story Bible
+│
+├── 🤖 Characters
+│     ├── Brilliant AI
+│     ├── Mira
+│     └── Future Characters
+│
+├── 🎨 Image Studio
+│     ├── Image Generator
+│     ├── Gallery
+│     └── Concept Art
+│
+├── 🎥 Video Studio
+│     ├── Video Generator
+│     ├── Trailers
+│     └── Cinematic Scenes
+│
+├── 🎵 Music Studio
+│     ├── Song Generator
+│     ├── Soundtracks
+│     └── Voice
+│
+├── 🏢 Brand Studio
+│     ├── Brand Stories
+│     ├── Product Showcase
+│     └── Sponsored Episodes
+│
+├── 📚 Prompt Library
+│     ├── Image Prompts
+│     ├── Video Prompts
+│     ├── Music Prompts
+│     └── Story Prompts
+│
+├── 🌍 Universe
+│     ├── Timeline
+│     ├── Locations
+│     ├── Technologies
+│     └── Encyclopedia
+│
+├── 👥 Community
+│     ├── Profiles
+│     ├── Comments
+│     ├── Creations
+│     └── Marketplace
+│
+├── ⚙️ Admin Core
+│     ├── Upload
+│     ├── Edit
+│     ├── Analytics
+│     └── Publish
+│
+└── 💎 AI Core
+      ├── AI Assistant
+      ├── Creative Engine
+      ├── Recommendation Engine
+      └── Future AI Features# Brilliant--Ai-Os
 Add a README file
 Add Brilliant AI OS dashboard core
 

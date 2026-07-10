@@ -1,15 +1,59 @@
 # Brilliant--Ai-Os
 Add a README file
 Add Brilliant AI OS dashboard core
+
+## BrilliantMemory Module
+
+```javascript
 const BrilliantMemory = {
- save(key,value){
-   localStorage.setItem(key, JSON.stringify(value));
- },
-index.html
- load(key){
-   return JSON.parse(localStorage.getItem(key));
- }
-}
+  save(key, value) {
+    try {
+      if (!key || typeof key !== 'string') {
+        throw new Error('Key must be a non-empty string');
+      }
+      localStorage.setItem(key, JSON.stringify(value));
+      return true;
+    } catch (error) {
+      console.error('Failed to save to memory:', error);
+      return false;
+    }
+  },
+  
+  load(key) {
+    try {
+      const item = localStorage.getItem(key);
+      return item ? JSON.parse(item) : null;
+    } catch (error) {
+      console.error('Failed to load from memory:', error);
+      return null;
+    }
+  },
+  
+  remove(key) {
+    try {
+      localStorage.removeItem(key);
+      return true;
+    } catch (error) {
+      console.error('Failed to remove from memory:', error);
+      return false;
+    }
+  },
+  
+  clear() {
+    try {
+      localStorage.clear();
+      return true;
+    } catch (error) {
+      console.error('Failed to clear memory:', error);
+      return false;
+    }
+  }
+};
+```
+
+---
+
+## index.html
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -108,7 +152,7 @@ BRILLIANT AI
 Познать. Понять. Сохранить будущее.
 </div>
 
-<button onclick="enterOS()">
+<button id="enterBtn">
 ▶ Enter Universe
 </button>
 
@@ -117,17 +161,33 @@ BRILLIANT AI
 
 <script>
 
-function enterOS(){
+// Define routes
+const ROUTES = {
+  DASHBOARD: 'dashboard.html',
+  HOME: 'index.html'
+};
 
-window.location.href="dashboard.html";
+// Event listeners
+document.addEventListener('DOMContentLoaded', () => {
+  const enterBtn = document.getElementById('enterBtn');
+  if (enterBtn) {
+    enterBtn.addEventListener('click', enterOS);
+  }
+});
 
+function enterOS() {
+  window.location.href = ROUTES.DASHBOARD;
 }
 
 </script>
 
 </body>
 </html>
-dashboard.html
+
+---
+
+## dashboard.html
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -172,11 +232,14 @@ h1 {
     padding:25px;
     text-align:center;
     box-shadow:0 0 25px rgba(0,150,255,.2);
+    cursor:pointer;
+    transition:all 0.3s ease;
 }
 
 .card:hover {
     transform:translateY(-5px);
     box-shadow:0 0 40px #008cff;
+    border-color:rgba(80,200,255,.8);
 }
 
 .icon {
@@ -204,28 +267,28 @@ Command Center
 
 <div class="grid">
 
-<div class="card">
+<div class="card" id="studio">
 <div class="icon">🎬</div>
 <h2>Studio</h2>
 <p>Создание эпизодов</p>
 </div>
 
 
-<div class="card">
+<div class="card" id="characters">
 <div class="icon">🤖</div>
 <h2>Characters</h2>
 <p>Brilliant AI / Mira</p>
 </div>
 
 
-<div class="card">
+<div class="card" id="media">
 <div class="icon">🎨</div>
 <h2>Media</h2>
 <p>Видео и изображения</p>
 </div>
 
 
-<div class="card">
+<div class="card" id="aicore">
 <div class="icon">🧠</div>
 <h2>AI Core</h2>
 <p>Память системы</p>
@@ -233,6 +296,23 @@ Command Center
 
 
 </div>
+
+<script>
+// Initialize dashboard with session tracking
+document.addEventListener('DOMContentLoaded', () => {
+  // Load previous state if exists
+  const previousState = BrilliantMemory?.load('dashboardState');
+  console.log('Dashboard state:', previousState);
+  
+  // Track card interactions
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      const cardId = e.currentTarget.id;
+      console.log('Card clicked:', cardId);
+    });
+  });
+});
+</script>
 
 </body>
 </html>

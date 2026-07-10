@@ -138,9 +138,9 @@ Keep the same Brilliant AI design language.
 <style>
 body {
     margin:0;
-    height:100vh;
+    height:100 vh;
     background:
-    radial-gradient(circle at center,#123b66,#050814 70%);
+    radial-gradient (circle at center,#123b66,#050814 70 %);
     color:white;
     font-family:Arial, sans-serif;
     display:flex;
@@ -154,28 +154,28 @@ body {
 }
 
 .logo {
-    font-size:45px;
+    font-size:45 px;
     font-weight:bold;
-    letter-spacing:8px;
+    letter-spacing:8 px;
     color:#65d8ff;
     text-shadow:
-    0 0 20px #00aaff,
-    0 0 40px #0066ff;
+    0 0 20 px #00aaff,
+    0 0 40 px #0066ff;
 }
 
 .diamond {
-    width:90px;
-    height:90px;
-    margin:40px auto;
-    transform:rotate(45deg);
+    width:90 px;
+    height:90 px;
+    margin:40 px auto;
+    transform: rotate (45 deg);
     background:#39c6ff;
     box-shadow:
-    0 0 20px #00c8ff,
-    0 0 60px #0088ff;
-    animation:pulse 2s infinite;
+    0 0 20 px #00c8ff,
+    0 0 60 px #0088ff;
+    animation:pulse 2 s infinite;
 }
 
-@keyframes pulse {
+@ key frames pulse {
     0 % ,100 % {
         opacity:.8;
         transform:rotate (45 deg) scale (1);
@@ -242,7 +242,7 @@ const ROUTES = {
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
   const enterBtn = document.getElementById('enterBtn');
-  if (enterBtn) {
+  iff (enterBtn) {
     enterBtn.addEventListener('click', enterOS);
   }
 });

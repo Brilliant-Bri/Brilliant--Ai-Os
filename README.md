@@ -69,57 +69,21 @@ BRILLIANT AI CORE
       └── Future AI Features# Brilliant--Ai-Os
 Add a README file
 Add Brilliant AI OS dashboard core
+BRILLIANT AI CORE
 
+Knowledge Core
+│
+├── Story Engine
+├── Character Engine
+├── Image Engine
+├── Video Engine
+├── Music Engine
+├── Prompt Engine
+├── Brand Engine
+├── Universe Engine
+├── Community Engine
+└── AI Assistant
 ## BrilliantMemory Module
-
-```javascript
-const BrilliantMemory = {
-  save(key, value) {
-    try {
-      if (!key || typeof key !== 'string') {
-        throw new Error('Key must be a non-empty string');
-      }
-      localStorage.setItem(key, JSON.stringify(value));
-      return true;
-    } catch (error) {
-      console.error('Failed to save to memory:', error);
-      return false;
-    }
-  },
-  
-  load(key) {
-    try {
-      const item = localStorage.getItem(key);
-      return item ? JSON.parse(item) : null;
-    } catch (error) {
-      console.error('Failed to load from memory:', error);
-      return null;
-    }
-  },
-  
-  remove(key) {
-    try {
-      localStorage.removeItem(key);
-      return true;
-    } catch (error) {
-      console.error('Failed to remove from memory:', error);
-      return false;
-    }
-  },
-  
-  clear() {
-    try {
-      localStorage.clear();
-      return true;
-    } catch (error) {
-      console.error('Failed to clear memory:', error);
-      return false;
-    }
-  }
-};
-```
-
----
 
 ## index.html
 

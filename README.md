@@ -94,7 +94,47 @@ Knowledge Core
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Brilliant AI OS</title>
+Create a new section called "AI Studio".
 
+The design must match the existing Brilliant AI website.
+
+Dark futuristic interface.
+Blue holographic glow.
+Glassmorphism panels.
+Smooth animations.
+
+Inside AI Studio create four large cards:
+
+🎨 Image Generator
+Upload image
+Write prompt
+Generate image
+
+🎬 Video Generator
+Upload image
+Paste YouTube link
+Write prompt
+Generate video
+
+📚 Prompt Library
+Store prompts by category:
+Characters
+Scenes
+Effects
+Camera
+Environment
+
+📁 My Projects
+Store created images
+Videos
+Prompts
+Stories
+
+Every card should have beautiful hover animations.
+
+Everything must be responsive for mobile and desktop.
+
+Keep the same Brilliant AI design language.
 <style>
 body {
     margin:0;

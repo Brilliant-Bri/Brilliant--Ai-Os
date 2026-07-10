@@ -176,31 +176,31 @@ body {
 }
 
 @keyframes pulse {
-    0%,100% {
+    0 % ,100 % {
         opacity:.8;
-        transform:rotate(45deg) scale(1);
+        transform:rotate (45 deg) scale (1);
     }
-    50% {
+    50 % {
         opacity:1;
-        transform:rotate(45deg) scale(1.15);
+        transform:rotate (45 deg) scale (1.15);
     }
 }
 
 .subtitle {
     color:#b9eaff;
-    font-size:20px;
-    margin-bottom:40px;
+    font-size:20 px;
+    margin-bottom:40 px;
 }
 
 button {
-    padding:15px 40px;
-    border-radius:30px;
-    border:1px solid #3bcfff;
+    padding:15 px 40 px;
+    border-radius:30 px;
+    border:1 px solid #3bcfff;
     background:transparent;
     color:white;
-    font-size:18px;
+    font-size:18 px;
     cursor:pointer;
-    box-shadow:0 0 20px #008cff;
+    box-shadow:0 0 20 px #008cff;
 }
 
 button:hover {
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-function enterOS() {
+functions enterOS() {
   window.location.href = ROUTES.DASHBOARD;
 }
 
@@ -272,50 +272,50 @@ function enterOS() {
 
 body {
     margin:0;
-    min-height:100vh;
+    min-height:100 vh;
     background:
-    radial-gradient(circle at top,#123b66,#050814);
+    radial-gradient (circle at top,#123b66,#050814);
     color:white;
     font-family:Arial,sans-serif;
 }
 
 header {
-    padding:30px;
+    padding:30 px;
     text-align:center;
 }
 
 h1 {
     color:#65d8ff;
-    text-shadow:0 0 25px #008cff;
-    letter-spacing:5px;
+    text-shadow:0 0 25 px #008cff;
+    letter-spacing:5 px;
 }
 
 .grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    padding:30px;
+    grid-template-columns:repeat (auto-fit,minmax (220 px,1 fr));
+    gap:20 px;
+    padding:30 px;
 }
 
 .card {
-    background:rgba(20,40,80,.4);
-    border:1px solid rgba(80,200,255,.4);
-    border-radius:20px;
-    padding:25px;
+    background: rgba (20,40,80,.4);
+    border:1 px solid rgba (80,200,255,.4);
+    border-radius:20 px;
+    padding:25 px;
     text-align:center;
-    box-shadow:0 0 25px rgba(0,150,255,.2);
+    box-shadow:0 0 25 px rgba (0,150,255,.2);
     cursor:pointer;
-    transition:all 0.3s ease;
+    transition:all 0.3 s ease;
 }
 
 .card:hover {
-    transform:translateY(-5px);
-    box-shadow:0 0 40px #008cff;
-    border-color:rgba(80,200,255,.8);
+    transform:trans late Y (-5 px);
+    box-shadow:0 0 40 px #008cff;
+    border-color: rgba (80,200,255,.8);
 }
 
 .icon {
-    font-size:40px;
+    font-size:40 px;
 }
 
 </style>
@@ -373,13 +373,82 @@ Command Center
 // Initialize dashboard with session tracking
 document.addEventListener('DOMContentLoaded', () => {
   // Load previous state if exists
-  const previousState = BrilliantMemory?.load('dashboardState');
+  construction previousState = BrilliantMemory?.load('dashboardState');
   console.log('Dashboard state:', previousState);
   
-  // Track card interactions
+Upgrade the Brilliant AI website into a content management system.
+
+Add an Admin Panel.
+
+Features:
+
+1. VIDEO LIBRARY
+- Upload videos from phone.
+- Add YouTube links.
+- Automatic video gallery.
+- Categories:
+  - Episodes
+  - Trailers
+  - Behind the Scenes
+  - Tests
+
+2. IMAGE GALLERY
+- Upload images from phone.
+- Automatic image grid.
+- Full-screen preview when clicked.
+
+3. CHARACTER DATABASE
+- Add/Edit/Delete characters.
+- Image.
+- Name.
+- Description.
+- Biography.
+
+4. STORY DATABASE
+- Add chapters.
+- Add episodes.
+- Rich text editor.
+- Automatic navigation.
+
+5. MULTILANGUAGE
+Every New contents automatically supports:
+English and Russian.
+
+6. SEARCH
+Search across all videos, images and stories.
+
+7. FAVORITES
+Allow users to save favorite episodes.
+
+8. RESPONSIVE
+Works perfectly on phone, tablet and desktop.
+
+9. ADMIN LOGIN
+Simple password-protected admin page.
+
+10. STORAGE
+Store all uploaded images and videos inlocal storage or project assets.
+Support future migration to Firebase or Supabase.
+
+11. GALLERY
+Auto-generated beautiful cards withc animations.
+
+12. VIDEO PLAYER
+Built- player.
+Support MP4.
+Support YouTube.
+Support Vimeo.
+
+13. DESIGN
+Keep the Brilliant AI cinematic blue futuristic interface.
+Smooth animations.
+Glassmorphism.
+Dark theme.
+
+Everything should work without breaking the existing design.
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', (e) => {
-      const cardId = e.currentTarget.id;
+cardId = e.currentTarget.id;
       console.log('Card clicked:', cardId);
     });
   });

@@ -1,0 +1,327 @@
+ЕН
+10
+
+Картина
+Переключить боковую панель
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+brilliant-ai-structured-project.html
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brilliant AI | Project Structure</title>
+    <meta name="description" content="Clean project structure for Brilliant AI website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .project-structure {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0f;
+            color: #e2e8f0;
+        }
+        .folder {
+            color: #60a5fa;
+        }
+        .file {
+            color: #34d399;
+        }
+        .config {
+            color: #fbbf24;
+        }
+    </style>
+</head>
+<body class="project-structure p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-2">Brilliant AI Project Structure</h1>
+        <p class="text-gray-400 mb-8">Clean, portable architecture for easy deployment</p>
+        
+        <div class="glassmorphism p-6 rounded-2xl mb-8">
+            <h2 class="text-xl font-bold mb-4">📁 Project Folder Structure</h2>
+            <pre class="whitespace-pre-line leading-relaxed">
+<span class="folder">brilliant-ai-website/</span>
+│
+Логотип
+DeepSite AI
+Профессиональный генератор веб-сайтов на основе ИИ | Создавайте веб-сайты мгновенно с помощью DeepSeek V3 | Кодирование не требуется
+
+Разработано на платформе DeepSeek V3. DeepSiteAI.com не связан с DeepSeek.
+
+Продукты
+Mixz AI
+
+Veo 3
+
+Модели
+OpenAI GPT OSS 20B | DeepSite AI
+
+Qwen: Модель кодировщика Qwen3 | DeepSite AI
+
+Модель сонета Клода №4
+
+Модель GPT-4.1
+
+Модель DeepSeek V3 0324
+
+ГПТ
+Looksmax GPT
+
+Астрология с использованием ИИ
+
+Удаление водяных знаков из чата
+
+Программа для проверки эссе при поступлении в колледж.
+
+Обернуто GPT
+
+Скидки в Черную пятницу
+
+Создатель рекламы
+
+Оценка роста
+
+Анализатор изображений
+
+Взрослый
+
+Модели изображений на основе ИИ
+Нано Банан Про
+
+Seedream 4
+
+Нано-банан
+
+Флюкс Шнелль
+
+Flux Kontext Pro
+
+Flux Kontext Max
+
+Изображение Квен
+
+Изображение 4
+
+Идеограмма V3 Качество
+
+Seedream 3
+
+Flux Dev
+
+Flux 1.1 Pro
+
+Flux 1.1 Pro Ultra
+
+Видеомодели на основе ИИ
+Клинг 2.5 Турбо
+
+WAN 2.2 Fast
+
+Wan 2.2
+
+Veo 3 Fast
+
+Veo 3
+
+Клинг 2.1
+
+Мастер Клинг 2.1
+
+Хайлуо 02
+
+Seedance 1.0 Lite
+
+Seedance 1.0 Pro
+
+Компания
+Бесплатные GPT
+
+Модели изображений на основе ИИ
+
+Видеомодели на основе ИИ
+
+Ресурсы
+
+Модели
+
+Юридические
+политика конфиденциальности
+
+Условия предоставления услуг
+
+Политика возврата средств
+
+Связаться с нами
+
+Английский
+العربية
+한국어
+немецкий
+Французский
+Испанский
+Португальский
+Русский
+日本語
+Türkçe
+简体中文
+© DeepSite.ai, 2025. Все права защищены.

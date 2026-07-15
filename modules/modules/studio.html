@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brilliant AI Studio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle, #123b66, #050814);
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #65d8ff;
+      text-shadow: 0 0 20px #008cff;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #b9eaff;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .panel {
+      background: rgba(20, 40, 80, 0.5);
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 0 30px #0066ff;
+      border: 1px solid rgba(60, 180, 255, 0.3);
+    }
+
+    .panel h2 {
+      color: #65d8ff;
+      margin-bottom: 25px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #b9eaff;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 0;
+      border-radius: 10px;
+      background: #081426;
+      color: white;
+      border: 1px solid #3bcfff;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #65d8ff;
+      box-shadow: 0 0 15px rgba(101, 216, 255, 0.5);
+      background: #0a1830;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    button {
+      flex: 1;
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #008cff;
+      color: white;
+      box-shadow: 0 0 20px rgba(0, 140, 255, 0.5);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: #0066cc;
+      box-shadow: 0 0 30px rgba(0, 140, 255, 0.8);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #65d8ff;
+      border: 1px solid #3bcfff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(60, 207, 255, 0.1);
+      border-color: #65d8ff;
+    }
+
+    button:disabled {
+      background: #555;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    .episodes-list {
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(60, 180, 255, 0.3);
+    }
+
+    .episodes-list h3 {
+      color: #65d8ff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .episode-item {
+      background: rgba(10, 24, 48, 0.5);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      border-left: 3px solid #008cff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .episode-item:hover {
+      background: rgba(10, 24, 48, 0.8);
+      transform: translateX(5px);
+    }
+
+    .episode-title {
+      color: #65d8ff;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .episode-meta {
+      color: #b9eaff;
+      font-size: 12px;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: transparent;
+      border: 1px solid #3bcfff;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+
+    .back-btn:hover {
+      background: #008cff;
+      box-shadow: 0 0 20px #008cff;
+    }
+
+    .success-message {
+      background: rgba(0, 200, 100, 0.2);
+      border: 1px solid #00c864;
+      color: #00ff88;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: none;
+      text-align: center;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="back-btn" onclick="goBack()">← Назад</button>
+
+  <div class="header">
+    <h1>🎬 Brilliant AI Studio</h1>
+    <p class="subtitle">Создание эпизодов</p>
+  </div>
+
+  <div class="container">
+    <div class="panel">
+      <div class="success-message" id="successMsg">
+        ✅ Эпизод успешно сохранён!
+      </div>
+
+      <h2>Создать новый эпизод</h2>
+
+      <form id="episodeForm">
+        <div class="form-group">
+          <label for="title">Название серии *</label>
+          <input
+            id="title"
+            type="text"
+            placeholder="Введите название серии"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="season">Сезон</label>
+          <input id="season" type="number" placeholder="1" value="1" min="1" />
+        </div>
+
+        <div class="form-group">
+          <label for="story">Описание истории *</label>
+          <textarea
+            id="story"
+            placeholder="Опишите основную идею и сюжет..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="scenes">Список сцен</label>
+          <textarea
+            id="scenes"
+            placeholder="Перечислите ключевые сцены (через запятую)..."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="voice">Голос персонажей</label>
+          <input
+            id="voice"
+            type="text"
+            placeholder="Описание голоса главного героя..."
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="music">Музыка</label>
+          <input
+            id="music"
+            type="text"
+            placeholder="Жанр и стиль музыки..."
+          />
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="btn-primary">✓ Создать проект</button>
+          <button type="reset" class="btn-secondary">⟲ Очистить</button>
+        </div>
+      </form>
+
+      <div class="episodes-list" id="episodesList" style="display: none">
+        <h3>Сохранённые эпизоды</h3>
+        <div id="episodesContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/memory-core.js"></script>
+  <script>
+    // Initialize form
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('episodeForm');
+      form.addEventListener('submit', saveEpisode);
+      loadEpisodes();
+    });
+
+    function saveEpisode(e) {
+      e.preventDefault();
+
+      const titleInput = document.getElementById('title');
+      const seasonInput = document.getElementById('season');
+      const storyInput = document.getElementById('story');
+      const scenesInput = document.getElementById('scenes');
+      const voiceInput = document.getElementById('voice');
+      const musicInput = document.getElementById('music');
+      const successMsg = document.getElementById('successMsg');
+
+      // Валидация
+      if (!titleInput.value.trim()) {
+        alert('❌ Пожалуйста, введите название серии');
+        titleInput.focus();
+        return;
+      }
+
+      if (!storyInput.value.trim()) {
+        alert('❌ Пожалуйста, введите описание истории');
+        storyInput.focus();
+        return;
+      }
+
+      // Формируем объект эпизода
+      const episode = {
+        title: titleInput.value.trim(),
+        season: seasonInput.value || '1',
+        story: storyInput.value.trim(),
+        scenes: scenesInput.value.trim(),
+        voice: voiceInput.value.trim(),
+        music: musicInput.value.trim(),
+        timestamp: new Date().toLocaleString('ru-RU'),
+        id: Date.now(),
+      };
+
+      try {
+        // Сохраняем в memory
+        BrilliantMemory.saveEpisode(episode);
+
+        // Показываем сообщение об успехе
+        successMsg.classList.add('show');
+        setTimeout(() => {
+          successMsg.classList.remove('show');
+        }, 3000);
+
+        // Очищаем форму
+        document.getElementById('episodeForm').reset();
+
+        // Загружаем список эпизодов
+        loadEpisodes();
+
+        console.log('✅ Эпизод сохранён:', episode);
+      } catch (error) {
+        alert('❌ Ошибка при сохранении: ' + error.message);
+        console.error(error);
+      }
+    }
+
+    function loadEpisodes() {
+      const episodes = BrilliantMemory.getAllEpisodes();
+      const container = document.getElementById('episodesContainer');
+      const list = document.getElementById('episodesList');
+
+      container.innerHTML = '';
+
+      if (episodes.length === 0) {
+        list.style.display = 'none';
+        return;
+      }
+
+      list.style.display = 'block';
+
+      episodes.forEach((episode) => {
+        const item = document.createElement('div');
+        item.className = 'episode-item';
+        item.innerHTML = `
+          <div class="episode-title">${episode.title}</div>
+          <div class="episode-meta">
+            Сезон ${episode.season} • ${episode.timestamp}
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function goBack() {
+      window.location.href = '../../modules/dashboard.html';
+    }
+  </script>
+</body>
+</html>

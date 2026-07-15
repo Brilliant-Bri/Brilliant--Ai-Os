@@ -35,6 +35,7 @@ box-shadow:0 0 30px #0066ff;
 
 input,textarea{
 width:100%;
+box-sizing:border-box;
 margin:10px 0;
 padding:12px;
 border-radius:10px;
@@ -50,6 +51,18 @@ background:#008cff;
 color:white;
 border:none;
 cursor:pointer;
+width:100%;
+margin-top:10px;
+transition:background 0.3s;
+}
+
+button:hover{
+background:#0066cc;
+}
+
+button:disabled{
+background:#555;
+cursor:not-allowed;
 }
 
 </style>
@@ -66,19 +79,19 @@ cursor:pointer;
 
 <h2>Создать новый эпизод</h2>
 
-<input id="title" placeholder="Название серии">
+<input id="title" placeholder="Название серии" type="text">
 
-<input id="season" placeholder="Сезон">
+<input id="season" placeholder="Сезон" type="number">
 
 <textarea id="story" placeholder="Описание истории"></textarea>
 
 <textarea id="scenes" placeholder="Список сцен"></textarea>
 
-<input id="voice" placeholder="Голос персонажей">
+<input id="voice" placeholder="Голос персонажей" type="text">
 
-<input id="music" placeholder="Музыка">
+<input id="music" placeholder="Музыка" type="text">
 
-<button onclick="saveEpisode()">
+<button id="saveBtn" onclick="saveEpisode()">
 Создать проект
 </button>
 
@@ -89,23 +102,66 @@ cursor:pointer;
 
 function saveEpisode(){
 
+// Получаем элементы через getElementById
+const titleInput = document.getElementById('title');
+const seasonInput = document.getElementById('season');
+const storyInput = document.getElementById('story');
+const scenesInput = document.getElementById('scenes');
+const voiceInput = document.getElementById('voice');
+const musicInput = document.getElementById('music');
+const saveBtn = document.getElementById('saveBtn');
+
+// Валидация: проверяем заполнены ли обязательные поля
+if(!titleInput.value.trim()){
+alert("Пожалуйста, введите название серии");
+return;
+}
+
+if(!storyInput.value.trim()){
+alert("Пожалуйста, введите описание истории");
+return;
+}
+
+// Формируем объект эпизода
 let episode={
-title:title.value,
-season:season.value,
-story:story.value,
-scenes:scenes.value,
-voice:voice.value,
-music:music.value
+title: titleInput.value.trim(),
+season: seasonInput.value || "1",
+story: storyInput.value.trim(),
+scenes: scenesInput.value.trim(),
+voice: voiceInput.value.trim(),
+music: musicInput.value.trim(),
+timestamp: new Date().toLocaleString('ru-RU')
 };
 
+// Отключаем кнопку
+saveBtn.disabled = true;
+saveBtn.textContent = "Сохранение...";
 
+try{
+// Сохраняем в localStorage
 localStorage.setItem(
 "BrilliantEpisode",
 JSON.stringify(episode)
 );
 
+// Очищаем форму
+titleInput.value = "";
+seasonInput.value = "";
+storyInput.value = "";
+scenesInput.value = "";
+voiceInput.value = "";
+musicInput.value = "";
 
-alert("Эпизод сохранён в Brilliant AI Memory");
+alert("✅ Эпизод успешно сохранён в Brilliant AI Memory");
+
+}catch(error){
+alert("❌ Ошибка при сохранении: " + error.message);
+console.error(error);
+}finally{
+// Возвращаем кнопку в исходное состояние
+saveBtn.disabled = false;
+saveBtn.textContent = "Создать проект";
+}
 
 }
 
